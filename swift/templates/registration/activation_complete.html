@@ -1,0 +1,8 @@
+{% extends 'swift/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<p>{% trans "Your account is now activated." %}</p>
+<a href="{% url 'swift:home' %}"
+                           class="btn btn-warning">Home Page</a>
+{% endblock %}

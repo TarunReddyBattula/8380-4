@@ -1,0 +1,138 @@
+{% extends 'swift/base.html' %}
+{% load staticfiles %}
+{% block content %}
+            {% if user.is_authenticated %}
+                <div class="page-container">
+
+                    <h2 class="top-menu">Hello {{ user.username }},</h2>
+                    <p>Please choose from below options.</p>
+
+                </div>
+            {% endif %}
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="links">
+                            <!-- Example row of columns -->
+                            <div class="row">
+
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static "images/stocks.jpg" %}" alt="students"/>
+                                        <div class="caption">
+                                            <h2>Student Portfolio</h2>
+                                            <p>Our Stock swifts vary across industries.</p>
+                                            <p><a class="btn btn-primary" href="{% url 'swift:student_list' %}"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static "images/stocks.jpg" %}" alt="parents"/>
+                                        <div class="caption">
+                                            <h2>Parent Portfolio</h2>
+                                            <p>Our Stock swifts vary across industries.</p>
+                                            <p><a class="btn btn-primary" href="{% url 'swift:parent_list' %}"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                     <div class="thumbnail">
+                                         <img src="{% static "images/stocks.jpg" %}" alt="teachers"/>
+                                         <div class="caption">
+                                             <h2>Teacher Portfolio</h2>
+                                             <p>Our Stock swifts vary across industries.</p>
+                                             <p><a class="btn btn-default" href="{% url 'swift:teacher_list' %}"
+                                                   role="button">View
+                                                   details &raquo;</a></p>
+                                         </div>
+                                     </div>
+                                 </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static " images/stocks.jpg" %}" alt="events"/>
+                                        <div class="caption">
+                                            <h2>Events Portfolio</h2>
+                                            <p>Our Stock swifts vary across industries.</p>
+                                            <p><a class="btn btn-default" href="{% url 'swift:event_list' %}"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static " images/stocks.jpg" %}" alt="invoice"/>
+                                        <div class="caption">
+                                            <h2>Invoice Portfolio</h2>
+                                            <p>Our Stock swifts vary across industries.</p>
+                                            <p><a class="btn btn-default" href="{% url 'swift:invoice_list' %}"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static " images/stocks.jpg" %}" alt="course"/>
+                                        <div class="caption">
+                                            <h2>Course Portfolio</h2>
+                                            <p>Our Stock swifts vary across industries.</p>
+                                            <p><a class="btn btn-default" href="{% url 'swift:course_list' %}"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static " images/stocks.jpg" %}" alt="grade"/>
+                                        <div class="caption">
+                                            <h2>Grade Portfolio</h2>
+                                            <p>Our Stock swifts vary across industries.</p>
+                                            <p><a class="btn btn-default" href="{% url 'swift:grade_list' %}"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static " images/stocks.jpg" %}" alt="mark"/>
+                                        <div class="caption">
+                                            <h2>Mark Portfolio</h2>
+                                            <p>Our Stock swifts vary across industries.</p>
+                                            <p><a class="btn btn-default" href="{% url 'swift:mark_list' %}"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static " images/stocks.jpg" %}" alt="exam"/>
+                                        <div class="caption">
+                                            <h2>Exam Portfolio</h2>
+                                            <p>Our Stock swifts vary across industries.</p>
+                                            <p><a class="btn btn-default" href="{% url 'swift:exam_list' %}"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+    </html>
+{% endblock %}

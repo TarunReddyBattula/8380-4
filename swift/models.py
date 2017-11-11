@@ -66,7 +66,7 @@ class Teacher(models.Model):
      #   return self.shares * self.purchase_price
 
 class Invoice(models.Model):
-    parent = models.ForeignKey(Parent, related_name='invoivce_parents')
+    parent = models.ForeignKey(Parent, related_name='invoice_parents')
     student = models.ForeignKey(Student, related_name='invoice_students')
     invoice_name = models.CharField(max_length=20)
     invoice_description = models.CharField(max_length=200)
@@ -111,7 +111,7 @@ class Grade(models.Model):
     grade_attendance = models.CharField(max_length=20)
 
     def __str__(self):
-        return str(self.grade_name)
+        return str(self.grade_value)
 
 class Mark(models.Model):
     exam = models.ForeignKey(Exam, related_name='mark_exams')
@@ -121,4 +121,4 @@ class Mark(models.Model):
     marks_feedback = models.CharField(max_length=250)
 
     def __str__(self):
-        return str(self.marks.value)
+        return str(self.marks_value)

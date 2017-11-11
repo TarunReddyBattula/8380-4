@@ -1,0 +1,148 @@
+{% extends 'swift/base.html' %}
+{% load staticfiles %}
+{% block content %}
+            {% if user.is_authenticated %}
+                <div class="jumbotron-small text-center">
+
+                    <h2 class="top-menu">Hello {{ user.username }},</h2>
+                    <p>Please choose from below options.</p>
+
+                </div>
+            {% endif %}
+<div id="user" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>STUDENT</h2><br>
+	  <h4>Student profile, where you can find information about all students in the school<h4><br>
+      </div>
+    <div class="col-sm-4">
+      <a href="{% url 'swift:student_list' %}"><span class="glyphicon glyphicon-book logo" ></span></a>
+    </div>
+  </div>
+</div>
+
+<div id="user" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="{% url 'swift:teacher_list' %}"><span class="glyphicon glyphicon-education logo"></span></a>
+    </div>
+    <div class="col-sm-8">
+      <h2>TEACHER</h2><br>
+	  <h4>Check the courses being taught by a teacher<h4><br>
+      </div>
+  </div>
+</div>
+
+<div id="user" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>PARENT</h2><br>
+	  <h4>Have a look at your children school profiles and also their payment information<h4><br>
+      </div>
+    <div class="col-sm-4">
+      <a href="{% url 'swift:parent_list' %}"><span class="glyphicon glyphicon-user logo"></span></a>
+    </div>
+  </div>
+</div>
+
+<div id="course" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="{% url 'swift:course_list' %}"><span class="glyphicon glyphicon-folder-open logo"></span></a>
+    </div>
+    <div class="col-sm-8">
+      <h2>COURSE</h2><br>
+	  <h4>Full information about all the courses being taught in your school and their respective teachers<h4><br>
+      </div>
+  </div>
+</div>
+
+<div id="user" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>GRADE</h2><br>
+	  <h4>Beware! Grades for your present semester in your various courses are revelaed here<h4><br>
+      </div>
+    <div class="col-sm-4">
+      <a href="{% url 'swift:grade_list' %}"><span class="glyphicon glyphicon-font logo"></span></a>
+    </div>
+  </div>
+</div>
+
+<div id="course" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="{% url 'swift:mark_list' %}"><span class="glyphicon glyphicon-pencil logo"></span></a>
+    </div>
+    <div class="col-sm-8">
+      <h2>MARK</h2><br>
+	  <h4>Marks for your exams in the present semester for your various courses can be seen here<h4><br>
+      </div>
+  </div>
+</div>
+
+<div id="user" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>EXAM</h2><br>
+	  <h4>Various exams students are entailed to in their semester in their school<h4><br>
+      </div>
+    <div class="col-sm-4">
+      <a href="{% url 'swift:exam_list' %}"><span class="glyphicon glyphicon-duplicate logo"></span></a>
+    </div>
+  </div>
+</div>
+
+<div id="course" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="{% url 'swift:event_list' %}"><span class="glyphicon glyphicon-briefcase logo"></span></a>
+    </div>
+    <div class="col-sm-8">
+      <h2>EVENT</h2><br>
+	  <h4>Event pertained to a respective student attended with teachers for discussion on subject topics<h4><br>
+      </div>
+  </div>
+</div>
+
+<div id="user" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>INVOICE</h2><br>
+	  <h4>Invoice generated for each student based on their respective courses and departments<h4><br>
+      </div>
+    <div class="col-sm-4">
+      <a href="{% url 'swift:invoice_list' %}"><span class="glyphicon glyphicon-list-alt logo"></span></a>
+    </div>
+  </div>
+</div><br>
+
+<script>
+$(document).ready(function(){
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+{% endblock %}
+</body>
+</html>

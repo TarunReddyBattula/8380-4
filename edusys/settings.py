@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'mathfilters',
     'swift',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,7 @@ DATABASES = {
     }
 }
 
+ACCOUNT_ACTIVATION_DAYS = 7
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -120,4 +122,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'testpython300@gmail.com'
+EMAIL_HOST_PASSWORD = 'testpython'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+SERVER_EMAIL = 'testpython300@gmail.com'
+DEFAULT_FROM_EMAIL = 'Tarun Reddy'
